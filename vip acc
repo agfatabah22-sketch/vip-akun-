@@ -1,0 +1,149 @@
+getgenv().VO_CONFIG = {
+    -- === HUB / AUTH ===
+    HubKey = "CjHWNyzudDsRcLKsS3LH7nVa6aMVH2j5ehQD90owvZM",
+    DeviceName = "9 NAGA",
+
+    -- === MAIN FARM (choose one mode) ===
+    PotFarm = true,
+    EggFarm = false,
+    PetFarm = true,
+    KeepEggFarm = false,
+    KeepPetFarm = false,
+    EggName = {"Egg Name"},
+    PetFarmList = {
+        -- Common pet
+        "Buffalo",
+        "Cat",
+        "Dog",
+        "Otter",
+
+        -- Leg pet
+        "Dragon",
+        "Unicorn"
+
+    },
+    PrioritizePet = "",
+
+    -- === HALLOWEEN 2026 EVENT ===
+    AutoCandyCornPile = false,        -- Claim the Candy Corn Pile (requires the 1.25x Candy Multiplier gamepass)
+    GhostClustersMinigame = true,     -- Ghost Gallery minigame (on unless set to false; farm tasks pause while it runs; drops Crypt Keys)
+    HauntletMinigame = true,          -- Hauntlet 2 door-picking minigame (on unless set to false; farm tasks pause while it runs)
+    SpotlightMinigame = true,         -- Spotlight circus candy corn minigame (on unless set to false; farm tasks pause while it runs)
+
+    -- === PET PEN ===
+    PetPen = true,
+    CustomPenEggs = {"Retired Egg"},
+    CustomPenPets = {
+        -- Common pet
+        "Buffalo",
+        "Cat",
+        "Dog",
+        "Otter"
+
+
+    },
+    PrioritizePetPenTypes = {"Egg"},  -- "Egg", "Normal", "Neon" (empty = all)
+
+    -- === PET RELEASER ===
+    PetReleaser = true,
+    ReleasePets = {
+        -- Common pet
+        "Mega Buffalo",
+        "Mega Cat",
+        "Mega Dog",
+        "Mega Otter",
+
+        -- Uncommon pet
+        "Chocolate Labrador",
+        "Fennec Fox",
+        "Puma",
+        "Snow Cat",
+
+        -- Rare
+        "Bunny",
+        "Beaver",
+        "Rabbit",
+        "Snow Puma",
+
+        -- Ultra-Rare
+        "Red Panda",
+        "Shiba Inu"
+
+    },
+    ExcludeReleasePets = {},
+    ReleaseTypes = {},
+    ReleaseRarities = {},
+    ExcludeRarities = {"Legendary"},
+
+    -- === AGE PETS ===
+    AgePets = false,
+    AgePetsNames = {},
+    AgePetsTypes = {"Normal"},  -- "Normal", "Neon", "ALL"
+
+    -- === AUTO FUSE ===
+    AutoFuse = true,
+    AutoFuseBlacklist = {}, -- Pet names to never include in neon/mega fusion
+
+    -- === BUY PETS ===
+    BuyPets = true,
+    BuyPetName = {"Retired Egg", "Crystal Egg", "Stray Cat Dragon"},  -- Loops in order, buys all of first pet then moves to next
+
+    -- === STAR REWARDS SHOP ===
+    BuyStarRewards = true,
+    StarRewardBuyList = {"Gemstone Egg"},
+
+    -- === BOXES ===
+    BuyBoxes = false,
+    BoxName = {"Box Name"},   -- Boxes to buy when BuyBoxes is true
+    OpenBoxes = {"Box Name"}, -- Box names to open from inventory
+
+    -- === LURE ===
+    BaitName = "Bait Name",
+
+    -- === AUTO TRADE ===
+    AutoTrade = false,
+    ReceiverUsernames = {},
+    TradeItemList = {
+         pets = {"Dog","Neon Cat"}
+    }, -- Per category: { pets = {"Dog","Neon Cat"}, food = {}, toys = {}, ... } — use "ALL" in a category to allow that whole category (pets still gated by TradePetType for bare names)
+    TradePetType = {"ALL"},       -- Only applies to pets: "ALL", "Mega", "Neon", "Regular", "Neon_FG", "Regular_FG" — not used for food/toys/etc.; inline prefixes on pet strings (e.g. "Mega Dog") bypass this
+
+    -- === CASH TRANSFER ===
+    CashTransfer = false,
+    TransferMethods = {"mannequin"},  -- Current Methods: "mannequin"
+    TransferAccount = "",
+
+    -- === DISCORD WEBHOOK ===
+    WebhookEnabled = false,
+    WebhookURL = "",
+    WebhookPets = {},  -- Pet names to send (empty = all)
+
+    -- === ACCOUNT FEATURES (stop when Conditions met; FarmSync / FarmersV5 only) ===
+    AccountFeatures = {
+        Enabled = false,
+        RequireAll = true, -- true = AND all conditions; false = OR any one
+        Conditions = {
+            -- { Type = "PetCount", PetName = "Mega Neon Dog", MinCount = 16 },
+            -- { Type = "Currency", Currency = "money", MinAmount = 100000 },
+            -- { Type = "SessionMinutes", MinMinutes = 180 },
+        },
+        ["Selected Tool"] = "FarmSync", -- or "FarmersV5"
+        FarmSync = {
+            DisableAccount = false,
+            AutoChange = false,
+            StartFolderId = "",
+            EndFolderId = "",
+            ConfigId = "",
+        },
+        FarmersV5 = {
+            DisableAccount = false,
+            APIKey = "",
+            AutoSwap = false,
+            AutoSwapOption = 1,
+            AutoSwapCooldown = 100,
+        },
+    },
+
+    ExtraOpti = false
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/voltrex2/VoHub/refs/heads/main/DUAL_FARM"))()
