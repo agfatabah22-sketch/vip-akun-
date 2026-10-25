@@ -6,7 +6,7 @@ getgenv().VO_CONFIG = {
     -- === MAIN FARM (choose one mode) ===
     PotFarm = true,
     EggFarm = false,
-    PetFarm = true,
+    PetFarm = false,
     KeepEggFarm = false,
     KeepPetFarm = false,
     EggName = {"Egg Name"},
